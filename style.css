@@ -362,84 +362,75 @@ p {
    PROJECTS
    =================================================== */
 .projects {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
 }
 
 .project {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: space-between;
-    gap: 2rem;
-    padding: 2rem .75rem;
-    border-bottom: 1px solid var(--border);
-    border-radius: 8px;
-    transition: background .2s;
-}
-
-.project:first-child {
-    border-top: 1px solid var(--border);
+    gap: 1.5rem;
+    padding: 2rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    height: 100%;
+    position: relative;
+    overflow: hidden;
 }
 
 .project:hover {
-    background: var(--blue-bg);
+    background: var(--bg);
+    border-color: var(--blue);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
 }
 
 .project__meta {
     display: flex;
-    align-items: flex-start;
-    gap: 1.5rem;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .project__num {
-    font-size: .78rem;
-    font-weight: 900;
+    font-size: .75rem;
+    font-weight: 800;
     color: var(--blue);
-    padding-top: 4px;
-    min-width: 22px;
-    flex-shrink: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
 
 .project__meta h3 {
-    font-size: 1.25rem;
+    font-size: 1.4rem;
     font-weight: 800;
     color: var(--text);
-    margin-bottom: .4rem;
+    margin-bottom: 0.5rem;
     letter-spacing: -.02em;
 }
 
 .project__meta p {
-    font-size: .9rem;
+    font-size: 0.95rem;
     color: var(--muted);
-    margin-bottom: .75rem;
-}
-
-.tags {
-    display: flex;
-    gap: .4rem;
-    flex-wrap: wrap;
-}
-
-.tags span {
-    font-size: .73rem;
-    font-weight: 700;
-    color: var(--blue);
-    background: var(--blue-bg);
-    border: 1px solid rgba(77, 162, 255, .2);
-    padding: .15rem .6rem;
-    border-radius: 50px;
+    margin-bottom: 1.25rem;
+    line-height: 1.6;
 }
 
 .project__arrow {
-    font-size: 1.4rem;
-    color: var(--muted);
-    flex-shrink: 0;
-    transition: color .2s, transform .2s;
+    font-size: 1.2rem;
+    color: var(--blue);
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-.project:hover .project__arrow {
-    color: var(--blue);
-    transform: translateX(4px);
+.project__arrow::before {
+    content: 'View Details';
+    font-size: 0.85rem;
+    font-weight: 700;
 }
 
 /* ===================================================
@@ -602,26 +593,36 @@ p {
    CONTACT
    =================================================== */
 .contact-links {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-top: 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 4rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .contact-links a {
-    padding: .7rem 1.75rem;
-    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem 1.5rem;
+    border-radius: 16px;
+    background: var(--surface);
     border: 1px solid var(--border);
-    font-size: .9rem;
-    font-weight: 500;
-    color: var(--muted);
-    transition: all .25s;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text);
+    transition: all 0.3s ease;
 }
 
 .contact-links a:hover {
     border-color: var(--blue);
+    background: var(--bg);
     color: var(--blue);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
 /* ===================================================
