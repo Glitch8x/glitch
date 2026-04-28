@@ -216,6 +216,7 @@ p {
     position: relative;
     width: 100%;
     max-width: 500px;
+    margin-top: -2.5rem;
 }
 
 .hero__img {
