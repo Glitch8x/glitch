@@ -452,6 +452,33 @@
         }
       });
     };
+    // Critical Role Cycling (Inlined as fail-safe)
+    document.addEventListener('DOMContentLoaded', () => {
+      const roles = [
+        'Software Developer',
+        'Mobile Developer',
+        'UI/UX Developer',
+        'Blockchain Developer',
+        'Motion Designer',
+        'Product Designer',
+      ];
+      let roleIndex = 0;
+      const roleEl = document.getElementById('role-text');
+
+      if (roleEl) {
+        function cycleRole() {
+          roleEl.classList.add('fade-out');
+          roleEl.classList.remove('fade-in');
+          setTimeout(() => {
+            roleIndex = (roleIndex + 1) % roles.length;
+            roleEl.textContent = roles[roleIndex];
+            roleEl.classList.remove('fade-out');
+            roleEl.classList.add('fade-in');
+          }, 420);
+        }
+        setInterval(cycleRole, 2500);
+      }
+    });
   </script>
 </body>
 
