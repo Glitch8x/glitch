@@ -2,14 +2,14 @@
    TOKENS — White + Sui Blue
    =================================================== */
 :root {
-    --bg: #05070a;
-    --surface: #0d1117;
-    --border: rgba(255, 255, 255, 0.08);
+    --bg: #ffffff;
+    --surface: #f8fafc;
+    --border: rgba(0, 0, 0, 0.06);
     --blue: #4da2ff;
-    --blue-bg: rgba(77, 162, 255, 0.15);
-    --text: #ffffff;
-    --soft: #a1a1aa;
-    --muted: #71717a;
+    --blue-bg: rgba(77, 162, 255, 0.1);
+    --text: #0f172a;
+    --soft: #475569;
+    --muted: #94a3b8;
     --font: 'Inter', system-ui, sans-serif;
 }
 
@@ -65,12 +65,12 @@ p {
     padding: 1.3rem 4%;
     transition: background .3s, border-color .3s;
     border-bottom: 1px solid transparent;
-    background: rgba(5, 7, 10, 0.8);
+    background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(12px);
 }
 
 .nav.scrolled {
-    background: rgba(5, 7, 10, .95);
+    background: rgba(255, 255, 255, .95);
     border-color: var(--border);
 }
 
@@ -198,8 +198,8 @@ p {
     letter-spacing: -.03em;
     line-height: 1.1;
     margin-bottom: 0.5rem;
-    color: #fff;
-    background: linear-gradient(to bottom right, #fff, #4da2ff);
+    color: var(--text);
+    background: linear-gradient(to bottom right, var(--text), var(--blue));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -289,7 +289,7 @@ p {
 
 .btn--outline {
     background: transparent;
-    color: #fff;
+    color: var(--text);
     border: 1px solid var(--border);
 }
 
