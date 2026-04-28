@@ -114,7 +114,7 @@
         <p class="sub">A selection of high-impact products where I've solved complex technical challenges and created
           meaningful value.</p>
         <div class="projects">
-          <div class="project" data-image="/assets/insuria.png" data-link="https://insuria-ai.vercel.app/">
+          <div class="project" onclick="openProjectModal(this)" data-image="/assets/insuria.png" data-link="https://insuria-ai.vercel.app/">
             <div class="project__meta">
               <span class="project__num">01</span>
               <div>
@@ -126,7 +126,7 @@
             </div>
             <span class="project__arrow">→</span>
           </div>
-          <div class="project"
+          <div class="project" onclick="openProjectModal(this)"
             data-image="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=1200"
             data-link="https://zeno-u7vf.onrender.com/">
             <div class="project__meta">
@@ -140,7 +140,7 @@
             </div>
             <span class="project__arrow">→</span>
           </div>
-          <div class="project" data-image="Screenshot (2767).png" data-link="https://sj-enterprise.vercel.app/">
+          <div class="project" onclick="openProjectModal(this)" data-image="Screenshot (2767).png" data-link="https://sj-enterprise.vercel.app/">
             <div class="project__meta">
               <span class="project__num">03</span>
               <div>
@@ -153,7 +153,7 @@
             </div>
             <span class="project__arrow">→</span>
           </div>
-          <div class="project" data-image="Screenshot (2777).png" data-link="https://signal-pulse1.vercel.app/">
+          <div class="project" onclick="openProjectModal(this)" data-image="Screenshot (2777).png" data-link="https://signal-pulse1.vercel.app/">
             <div class="project__meta">
               <span class="project__num">04</span>
               <div>
@@ -164,7 +164,7 @@
             </div>
             <span class="project__arrow">→</span>
           </div>
-          <div class="project" data-image="Screenshot (2776).png" data-link="https://ripple-sui.vercel.app/">
+          <div class="project" onclick="openProjectModal(this)" data-image="Screenshot (2776).png" data-link="https://ripple-sui.vercel.app/">
             <div class="project__meta">
               <span class="project__num">05</span>
               <div>
@@ -176,7 +176,7 @@
             </div>
             <span class="project__arrow">→</span>
           </div>
-          <div class="project" data-image="Screenshot (2770).png" data-link="https://lumina-ai-teal.vercel.app/">
+          <div class="project" onclick="openProjectModal(this)" data-image="Screenshot (2770).png" data-link="https://lumina-ai-teal.vercel.app/">
             <div class="project__meta">
               <span class="project__num">06</span>
               <div>
@@ -188,7 +188,7 @@
             </div>
             <span class="project__arrow">→</span>
           </div>
-          <div class="project" data-image="Screenshot (2773).png" data-link="https://register-one-beta.vercel.app/">
+          <div class="project" onclick="openProjectModal(this)" data-image="Screenshot (2773).png" data-link="https://register-one-beta.vercel.app/">
             <div class="project__meta">
               <span class="project__num">07</span>
               <div>
@@ -200,7 +200,7 @@
             </div>
             <span class="project__arrow">→</span>
           </div>
-          <div class="project" data-image="/assets/cortex.png" data-link="https://cortex-gas.onrender.com/">
+          <div class="project" onclick="openProjectModal(this)" data-image="/assets/cortex.png" data-link="https://cortex-gas.onrender.com/">
             <div class="project__meta">
               <span class="project__num">08</span>
               <div>
@@ -213,7 +213,7 @@
             </div>
             <span class="project__arrow">→</span>
           </div>
-          <div class="project" data-image="Screenshot (2761).png" data-link="https://cortex-gas.onrender.com/">
+          <div class="project" onclick="openProjectModal(this)" data-image="Screenshot (2761).png" data-link="https://cortex-gas.onrender.com/">
             <div class="project__meta">
               <span class="project__num">09</span>
               <div>
@@ -226,7 +226,7 @@
             </div>
             <span class="project__arrow">→</span>
           </div>
-          <div class="project" data-image="Screenshot (2763).png" data-link="https://fut-mpire.vercel.app/">
+          <div class="project" onclick="openProjectModal(this)" data-image="Screenshot (2763).png" data-link="https://fut-mpire.vercel.app/" onclick="openProjectModal(this)">
             <div class="project__meta">
               <span class="project__num">10</span>
               <div>
@@ -472,6 +472,57 @@
         setInterval(cycleRole, 2500);
       }
     });
+
+  </script>
+
+  <!-- Project Modal -->
+  <div id="project-modal" class="modal">
+    <div id="modal-overlay" class="modal__overlay" onclick="closeProjectModal()"></div>
+    <div class="modal__content">
+      <button id="modal-close" class="modal__close" aria-label="Close modal" onclick="closeProjectModal()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <h3 id="modal-title" style="margin-bottom: 1rem; font-size: 1.5rem; font-weight: 800;">Project Preview</h3>
+      <div class="modal__img-wrap">
+        <img src="" alt="Project Preview" id="modal-img" class="modal__img" />
+      </div>
+      <div class="modal__actions">
+        <a href="#" target="_blank" id="modal-link" class="btn btn--fill" style="width: 100%; text-align: center;">Visit
+          Website</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Critical Modal Logic (Inlined as fail-safe)
+    window.openProjectModal = function(proj) {
+      const modal = document.getElementById('project-modal');
+      const modalImg = document.getElementById('modal-img');
+      const modalLink = document.getElementById('modal-link');
+      const modalTitle = document.getElementById('modal-title');
+      
+      const imgSrc = proj.getAttribute('data-image');
+      const linkHref = proj.getAttribute('data-link');
+      const title = proj.querySelector('h3')?.textContent || 'Project Preview';
+
+      if (imgSrc && modalImg) {
+        modalImg.src = imgSrc;
+        modalImg.alt = title;
+      }
+      if (linkHref && modalLink) modalLink.href = linkHref;
+      if (modalTitle) modalTitle.textContent = title;
+
+      if (modal) modal.classList.add('active');
+    };
+
+    window.closeProjectModal = function() {
+      const modal = document.getElementById('project-modal');
+      if (modal) modal.classList.remove('active');
+    };
   </script>
 </body>
 
