@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ===================================================
   // SCROLL REVEALS
   // ===================================================
-  const scrollTargets = document.querySelectorAll('.project, .skill-card, .about__img-wrap, .about__text, .contact-links, .heading');
+  const scrollTargets = document.querySelectorAll('.project, .skill-card, .about__img-wrap, .about__text, .contact-links, .contact-form-wrap, .heading');
   
   scrollTargets.forEach(el => {
     el.style.opacity = '0';

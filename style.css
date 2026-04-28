@@ -592,11 +592,59 @@ p {
 /* ===================================================
    CONTACT
    =================================================== */
+.contact-form-wrap {
+    max-width: 700px;
+    margin: 0 auto 5rem;
+    text-align: left;
+    background: var(--surface);
+    padding: 3rem;
+    border-radius: 24px;
+    border: 1px solid var(--border);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.form-group label {
+    font-size: .85rem;
+    font-weight: 700;
+    color: var(--text);
+    text-transform: uppercase;
+    letter-spacing: .05em;
+}
+
+.form-group input, 
+.form-group textarea {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 1rem 1.25rem;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--text);
+    transition: all .2s;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--blue);
+    box-shadow: 0 0 0 4px var(--blue-bg);
+}
+
 .contact-links {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.5rem;
-    margin-top: 4rem;
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
