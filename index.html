@@ -431,6 +431,28 @@
     </div>
   </div>
 
+  <script>
+    // Critical Tab Logic (Inlined as fail-safe)
+    window.switchSkillTab = function(clickedTab) {
+      const target = clickedTab.getAttribute('data-tab');
+      const tabs = document.querySelectorAll('.skills__tab');
+      const panels = document.querySelectorAll('.skills__panel');
+
+      tabs.forEach(t => t.classList.remove('active'));
+      clickedTab.classList.add('active');
+
+      panels.forEach(p => {
+        p.classList.remove('active');
+        if (p.id === target) {
+          p.classList.add('active');
+          p.querySelectorAll('.skill-card').forEach(card => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          });
+        }
+      });
+    };
+  </script>
 </body>
 
 </html>
