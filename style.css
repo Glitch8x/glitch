@@ -892,7 +892,7 @@ p {
    CONTACT
    =================================================== */
 .contact-form-wrap {
-    max-width: 700px;
+    max-width: 900px;
     margin: 0 auto 5rem;
     text-align: left;
     background: #ffffff;
@@ -902,9 +902,14 @@ p {
 }
 
 .contact-form {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
+}
+
+.contact-form .form-group:nth-child(3),
+.contact-form button {
+    grid-column: span 2;
 }
 
 .form-group {
@@ -1115,6 +1120,15 @@ p {
     .hero__desc {
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .contact-form {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form .form-group:nth-child(3),
+    .contact-form button {
+        grid-column: span 1;
     }
 
     .hero__img-wrap {
