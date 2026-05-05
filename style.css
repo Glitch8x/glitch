@@ -64,12 +64,13 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1.5rem 4%;
-    background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+    padding: 0.8rem 4%;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 70px;
 }
 
 .nav.scrolled {
@@ -964,6 +965,7 @@ p {
     font-weight: 700;
     color: var(--text);
     transition: all 0.3s ease;
+    min-width: 150px;
 }
 
 .contact-links a:hover {
@@ -971,7 +973,14 @@ p {
     background: var(--bg);
     color: var(--blue);
     transform: translateY(-5px);
-    box-shadow: none !important;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05) !important;
+}
+
+.contact-links a img,
+.contact-links a svg {
+    width: 20px !important;
+    height: 20px !important;
+    object-fit: contain;
 }
 
 /* ===================================================
