@@ -540,20 +540,29 @@ p {
     margin-right: auto;
 }
 
-.project-featured {
+.projects-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem 3rem;
     max-width: 1100px;
-    margin: 0 auto 100px;
+    margin: 0 auto;
+}
+
+
+.project-featured {
+    max-width: 100%;
+    margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .project-featured__image-wrap {
     width: 100%;
-    border-radius: 32px;
+    border-radius: 24px;
     overflow: hidden;
-    background: #000; /* For black themed screenshots like reference */
-    aspect-ratio: 16/9;
+    background: #f8fafc;
+    aspect-ratio: 1/1; /* Square thumbnails look cleaner in grids */
 }
 
 .project-featured__image {
@@ -573,7 +582,7 @@ p {
 }
 
 .project-featured__title {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 800;
     color: var(--text);
 }
@@ -1144,6 +1153,11 @@ p {
 
     .skills {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .projects-list {
+        grid-template-columns: 1fr;
+        gap: 4rem;
     }
 }
 
